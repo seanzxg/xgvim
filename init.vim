@@ -1,6 +1,14 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-rooter'
+Plug 'ryanoasis/vim-devicons'
+Plug 'valloric/matchtagalways'
+Plug 'whiteinge/diffconflicts'
+Plug 'rizzatti/dash.vim'
+Plug 'posva/vim-vue'
+Plug 'tommcdo/vim-exchange'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'romainl/vim-cool'
 Plug 'kana/vim-textobj-user'
@@ -33,8 +41,11 @@ endfor
 
 " plugins ********************************
 " gruvbox
-autocmd vimenter * ++nested colorscheme gruvbox
+" autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
+let g:gruvbox_bold=0
+let g:gruvbox_invert_selection=0
+colorscheme gruvbox
 nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
 nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
 nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
@@ -57,5 +68,6 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-vetur',
   \ 'coc-stylelint',
+  \ 'coc-pairs',
   \ ]
 

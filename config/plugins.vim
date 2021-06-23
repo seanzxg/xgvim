@@ -116,3 +116,82 @@ let g:rooter_patterns = ['.git']
 " easymotion
 map  f <Plug>(easymotion-bd-f)
 nmap f <Plug>(easymotion-overwin-f)
+
+" dash
+let g:dash_map = {
+\ 'javascript': ['javascript', 'NodeJS'],
+\ 'html': ['html', 'svg'],
+\}
+
+" vim-cool
+let g:CoolTotalMatches = 1
+
+" indentline
+let g:indentLine_fileTypeExclude = ['json', 'markdown']
+let g:indentLine_bufTypeExclude = ['help', 'terminal', 'nofile']
+let g:indentLine_char = '│'
+
+" jsdoc
+let g:jsdoc_allow_input_prompt = 0
+let g:jsdoc_enable_es6 = 1
+let g:jsdoc_access_descriptions = 2
+let g:jsdoc_underscore_private = 1
+let g:jsdoc_custom_args_regex_only = 1
+let g:jsdoc_custom_args_hook = {
+\ '^\(callback\|cb\)$': {
+\   'type': ' {Function} ',
+\   'description': 'Callback function'
+\ },
+\ '\(err\|error\)$': {
+\   'type': '{Error}'
+\ },
+\ '^\(opt\|options\)$': {
+\   'type': '{Object}'
+\ },
+\ 'handler$': {
+\   'type': '{Function}'
+\ },
+\ '^\(n\|i\)$': {
+\   'type': ' {Number} '
+\ },
+\ '^i$': {
+\   'type': ' {Number} '
+\ },
+\ '^_\?\(is\|has\)': {
+\   'type': ' {Boolean} '
+\ },
+\ '^arr$': {
+\   'type': ' {Array} '
+\ },
+\ '^str$': {
+\   'type': ' {String} '
+\ },
+\ '^e$': {
+\   'type': ' {Event} '
+\ },
+\ 'el$': {
+\   'type': ' {Element} '
+\ },
+\ '^node$': {
+\   'type': ' {Element} '
+\ },
+\ '^o$': {
+\   'type': ' {Object} '
+\ },
+\ '^obj$': {
+\   'type': ' {Object} '
+\ },
+\ '^fn$': {
+\   'type': ' {Function} '
+\ },
+\}
+
+" netrw
+let g:netrw_chgwin = 2
+let g:netrw_banner=0
+let g:netrw_list_hide = ',\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_winsize=20
+let g:netrw_liststyle=3
+let g:netrw_localrmdir='rmtrash'
+let g:netrw_bufsettings = "noma nomod nonu nobl nowrap ro nornu buftype=nofile"
+

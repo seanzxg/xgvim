@@ -22,6 +22,8 @@ set smartindent
 set tabstop=2
 set expandtab
 set shiftwidth=2
+" 不折行
+set nowrap
 
 " 提升速度
 " 这个正则引擎会导致打开文件失败
