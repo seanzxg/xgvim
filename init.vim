@@ -10,6 +10,10 @@ Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
+Plug 'mbbill/undotree'
+Plug 'tpope/vim-surround'
+Plug 'cristianoliveira/vim-react-html-snippets'
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 call plug#end()
 let mapleader=","
 
@@ -92,8 +96,70 @@ cnoremap <C-d> <Del>
 cnoremap <C-h> <BS>
 cnoremap <C-t> <C-R>=expand("%:p:h") . "/" <CR>
 
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <M-1> <C-\><C-n>1gt
+tnoremap <M-2> <C-\><C-n>2gt
+tnoremap <M-3> <C-\><C-n>3gt
+tnoremap <M-4> <C-\><C-n>4gt
+tnoremap <M-5> <C-\><C-n>5gt
+
+" Neovim :terminal colors.
+let g:terminal_color_0  = '#282828'
+let g:terminal_color_1  = '#cc241d'
+let g:terminal_color_2  = '#98971a'
+let g:terminal_color_3  = '#d79921'
+let g:terminal_color_4  = '#458588'
+let g:terminal_color_5  = '#b16286'
+let g:terminal_color_6  = '#689d6a'
+let g:terminal_color_7  = '#a89984'
+let g:terminal_color_8  = '#928374'
+let g:terminal_color_9  = '#fb4934'
+let g:terminal_color_10 = '#b8bb26'
+let g:terminal_color_11 = '#fabd2f'
+let g:terminal_color_12 = '#83a598'
+let g:terminal_color_13 = '#d3869b'
+let g:terminal_color_14 = '#8ec07c'
+let g:terminal_color_15 = '#ebdbb2'
+
+function! s:OnTermOpen(buf)
+  setl nolist norelativenumber nonumber
+  if &buftype ==# 'terminal'
+    nnoremap <buffer> q :<C-U>bd!<CR>
+  endif
+endfunction
+
+augroup neovim
+  autocmd!
+  autocmd TermOpen  *  :call s:OnTermOpen(+expand('<abuf>'))
+augroup end
+
+
+command! -nargs=0 T    :call     s:OpenTerminal()
+" Open vertical spit terminal with current parent directory
+function! s:OpenTerminal()
+  let bn = bufnr('%')
+  let dir = expand('%:p:h')
+  if exists('b:terminal') && !buflisted(get(b:, 'terminal'))
+    unlet b:terminal
+  endif
+  if !exists('b:terminal')
+    belowright vs +enew
+    exe 'lcd '.dir
+    execute 'terminal'
+    call setbufvar(bn, 'terminal', bufnr('%'))
+  else
+    execute 'belowright vertical sb '.get(b:, 'terminal', '')
+    call feedkeys("\<C-l>", 'n')
+  endif
+endfunction
+
+
+
 nnoremap <leader>. :source $MYVIMRC<CR>
-nnoremap <leader>w :w<CR>
+" nnoremap <leader>w :w<CR>
 " window
 nmap <leader>v :vsplit<cr>
 nmap <leader>s :split<cr>
@@ -239,6 +305,7 @@ noremap m :BufferNext<CR>
 noremap M :BufferPrevious<CR>
 nnoremap <leader>q :BufferClose<CR>
 nnoremap <leader>s :BufferPick<CR>
+nnoremap <leader>bo :BufferCloseAllButCurrent<CR>
 nnoremap <silent>    <leader>1 :BufferGoto 1<CR>
 nnoremap <silent>    <leader>2 :BufferGoto 2<CR>
 nnoremap <silent>    <leader>3 :BufferGoto 3<CR>
@@ -264,8 +331,19 @@ highlight link BufferVisibleSign    BufferVisible
 highlight link BufferVisibleTarget  BufferInactiveTarget
 highlight BufferTabpages            guibg=#ff0000 guifg=#ff0000
 
-" startify
 
+" undotree
+" Turn on persistent undo
+" Thanks, Mr Wadsten: github.com/mikewadsten/dotfiles/
+if has('persistent_undo')
+    set undodir=~/.vim/undo//
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+endif
+
+nnoremap <leader>u :UndotreeToggle<CR>
+" startify
 " 二进制网站
 " http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 let g:startify_custom_header = [

@@ -9,6 +9,18 @@
     "v": "open:vsplit",
     "c": "preview.content"
   },
+
+  // 代码块
+  "snippets.ultisnips.enable": true,
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snippets"],
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescriptreact": ["typescript"],
+    "typescript": ["javascript"]
+  },
+  "snippets.textmateSnippetsRoots": [
+    "/Users/sean/.config/nvim/plugged/vscode-es7-javascript-react-snippets/snippets"
+  ],
   // 提示
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
