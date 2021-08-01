@@ -1,5 +1,6 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'airblade/vim-rooter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'valloric/matchtagalways'
@@ -20,8 +21,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'dyng/ctrlsf.vim'
 Plug 'tpope/vim-repeat'
 Plug 'neoclide/mycomment.vim'
@@ -38,11 +37,9 @@ for s:path in split(glob('~/vim/config/*.vim'), "\n")
 endfor
 
 
-
-" plugins ********************************
 " gruvbox
-" autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
+let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_bold=0
 let g:gruvbox_invert_selection=0
 colorscheme gruvbox
@@ -52,6 +49,7 @@ nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
 nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
 nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
 nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
+
 "  coc.nvim
 let g:coc_global_extensions = [
   \ 'coc-tsserver',

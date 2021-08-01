@@ -116,6 +116,8 @@ let g:rooter_patterns = ['.git']
 " easymotion
 map  f <Plug>(easymotion-bd-f)
 nmap f <Plug>(easymotion-overwin-f)
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
 
 " dash
 let g:dash_map = {
@@ -126,10 +128,6 @@ let g:dash_map = {
 " vim-cool
 let g:CoolTotalMatches = 1
 
-" indentline
-let g:indentLine_fileTypeExclude = ['json', 'markdown']
-let g:indentLine_bufTypeExclude = ['help', 'terminal', 'nofile']
-let g:indentLine_char = '│'
 
 " jsdoc
 let g:jsdoc_allow_input_prompt = 0
@@ -195,3 +193,15 @@ let g:netrw_liststyle=3
 let g:netrw_localrmdir='rmtrash'
 let g:netrw_bufsettings = "noma nomod nonu nobl nowrap ro nornu buftype=nofile"
 
+
+" MatchTagAlways
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'js' : 1,
+    \ 'jsx' : 1,
+    \ 'ts' : 1,
+    \ 'tsx' : 1,
+    \}
