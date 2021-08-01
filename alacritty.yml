@@ -45,8 +45,8 @@ window:
   decorations: full
   startup_mode: Maximized 
 key_bindings:
-  - { key: P,            mods: Command, chars: ",cf"                                 }
-  - { key: Slash,        mods: Command, chars: ",c"                                  }
+  - { key: P,            mods: Command, chars: ",lf"                                 }
+    #- { key: Slash,        mods: Command, chars: ",c"                                  }
   - { key: F,            mods: Command | Shift, chars: ",]]"                }
   - { key: B,            mods: Command, chars: "\x1b:CocCommand explorer\n"          }
   - { key: J,            mods: Command, chars: ",\\"                                 }

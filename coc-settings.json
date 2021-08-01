@@ -19,7 +19,7 @@
     "typescript": ["javascript"]
   },
   "snippets.textmateSnippetsRoots": [
-    "/Users/sean/.config/nvim/plugged/vscode-es7-javascript-react-snippets/snippets"
+    "/Users/sean/.local/share/nvim/plugged/vscode-es7-javascript-react-snippets/snippets"
   ],
   // 提示
   "suggest.completionItemKindLabels": {
