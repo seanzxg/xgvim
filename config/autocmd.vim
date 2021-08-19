@@ -22,6 +22,8 @@ augroup common
   autocmd BufEnter * let d = expand('%') | if isdirectory(d) | bd | exe 'Startify' | endif
   " easymotion
   autocmd VimEnter * :EMCommandLineNoreMap <C-v> <Over>(paste)
+  " explorer
+  autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 augroup end
 
 function! s:Highlight() abort

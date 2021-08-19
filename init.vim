@@ -1,15 +1,12 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'alvan/vim-closetag'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'airblade/vim-rooter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'valloric/matchtagalways'
-Plug 'whiteinge/diffconflicts'
-Plug 'rizzatti/dash.vim'
 Plug 'posva/vim-vue'
 Plug 'tommcdo/vim-exchange'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'romainl/vim-cool'
 Plug 'kana/vim-textobj-user'
@@ -23,7 +20,7 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround'
 Plug 'dyng/ctrlsf.vim'
 Plug 'tpope/vim-repeat'
-Plug 'neoclide/mycomment.vim'
+Plug 'tpope/vim-commentary'
 Plug 'cristianoliveira/vim-react-html-snippets'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 call plug#end()
@@ -56,6 +53,8 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-css',
+  \ 'coc-cssmodules',
+  \ 'coc-styled-components',
   \ 'coc-emmet',
   \ 'coc-highlight',
   \ 'coc-html',

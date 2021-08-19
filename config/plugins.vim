@@ -19,7 +19,7 @@ let g:startify_bookmarks = [
             \ { 'so': '~/work/kuaishou-frontend-ad-ssp-operation' },
             \ { 'li': '~/work/kuaishou-frontend-ad-alliance-live' },
             \ { 'su': '~/learn/kuaishou-frontend-ad-alliance-supplier' },
-            \ { 'c': '~/vim-config/vimrc' },
+            \ { 'c': '~/vim/init.vim' },
             \ { 'z': '~/.zshrc' },
             \ ]
 let g:startify_session_dir = '~/.vim/sessions'
@@ -41,6 +41,7 @@ let g:startify_custom_footer =
            \"    <c-z> suspend vim and give you a shell",
            \"    fg back to vim",
            \ '']
+
 
 " undotree
 " Turn on persistent undo
@@ -119,12 +120,6 @@ nmap f <Plug>(easymotion-overwin-f)
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
 
-" dash
-let g:dash_map = {
-\ 'javascript': ['javascript', 'NodeJS'],
-\ 'html': ['html', 'svg'],
-\}
-
 " vim-cool
 let g:CoolTotalMatches = 1
 
@@ -194,14 +189,19 @@ let g:netrw_localrmdir='rmtrash'
 let g:netrw_bufsettings = "noma nomod nonu nobl nowrap ro nornu buftype=nofile"
 
 
-" MatchTagAlways
+" matchtagalways
 let g:mta_filetypes = {
+    \ 'typescriptreact' : 1,
+    \ 'javascriptreact' : 1,
     \ 'html' : 1,
     \ 'xhtml' : 1,
     \ 'xml' : 1,
-    \ 'jinja' : 1,
-    \ 'js' : 1,
-    \ 'jsx' : 1,
-    \ 'ts' : 1,
-    \ 'tsx' : 1,
     \}
+
+" closetag
+let g:closetag_filenames = '*.html,*.tsx,*.jsx'
+let g:closetag_regions = {
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+

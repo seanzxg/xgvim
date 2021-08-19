@@ -16,3 +16,4 @@ function! s:OpenTerminal()
     call feedkeys("\<C-l>", 'n')
   endif
 endfunction
+command! -nargs=0 Prettier :CocCommand prettier.formatFile

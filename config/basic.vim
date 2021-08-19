@@ -24,12 +24,14 @@ set expandtab
 set shiftwidth=2
 " 不折行
 set nowrap
-
+" 没有swap文件
+set noswapfile
 " 提升速度
 " 这个正则引擎会导致打开文件失败
 " set regexpengine=1
 set noshowcmd
 set synmaxcol=150
+
 
 " basic ********************************
 inoremap jj <ESC>
