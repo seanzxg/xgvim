@@ -31,7 +31,9 @@ set noswapfile
 " set regexpengine=1
 set noshowcmd
 set synmaxcol=150
-
+" 允许删除tab，line，超出start的插入
+set backspace=indent,eol,start
+set nocompatible
 
 " basic ********************************
 inoremap jj <ESC>

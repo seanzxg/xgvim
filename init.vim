@@ -23,6 +23,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'cristianoliveira/vim-react-html-snippets'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+Plug 'liuchengxu/vim-which-key'
 call plug#end()
 let mapleader=","
 filetype plugin on
