@@ -1,6 +1,7 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " theme
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 Plug 'posva/vim-vue'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'ryanoasis/vim-devicons'
@@ -43,18 +44,12 @@ for s:path in split(glob('~/vim/plugins/*.vim'), "\n")
 endfor
 
 
-" gruvbox
-set background=dark
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_bold=0
-let g:gruvbox_invert_selection=0
-colorscheme gruvbox
-nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
-nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
-nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
-nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
-nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
-nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
+if has('gui_running')
+  colorscheme solarized
+else
+  colorscheme gruvbox
+endif
+
 
 "  coc.nvim
 let g:coc_global_extensions = [
