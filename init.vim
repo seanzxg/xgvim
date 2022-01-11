@@ -33,6 +33,9 @@ syntax on
 for s:path in split(glob('~/vim/config/*.vim'), "\n")
   exe 'source ' . s:path
 endfor
+for s:path in split(glob('~/vim/plugins/*.vim'), "\n")
+  exe 'source ' . s:path
+endfor
 
 
 " gruvbox
