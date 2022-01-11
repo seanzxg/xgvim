@@ -1,26 +1,31 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+" theme
 Plug 'morhetz/gruvbox'
-Plug 'alvan/vim-closetag'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'airblade/vim-rooter'
-Plug 'ryanoasis/vim-devicons'
-Plug 'valloric/matchtagalways'
 Plug 'posva/vim-vue'
-Plug 'tommcdo/vim-exchange'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'ryanoasis/vim-devicons'
+Plug 'mhinz/vim-startify'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
+
+" tool
+Plug 'airblade/vim-rooter'
 Plug 'easymotion/vim-easymotion'
 Plug 'romainl/vim-cool'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
-Plug 'mhinz/vim-startify'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
-Plug 'mbbill/undotree'
-Plug 'tpope/vim-surround'
 Plug 'dyng/ctrlsf.vim'
+Plug 'tpope/vim-surround'
+Plug 'mbbill/undotree'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'alvan/vim-closetag'
+Plug 'valloric/matchtagalways'
+Plug 'tommcdo/vim-exchange'
+
+" code
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'cristianoliveira/vim-react-html-snippets'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 Plug 'liuchengxu/vim-which-key'
@@ -71,4 +76,3 @@ let g:coc_global_extensions = [
   \ 'coc-stylelint',
   \ 'coc-pairs',
   \ ]
-

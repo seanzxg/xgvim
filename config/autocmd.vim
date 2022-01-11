@@ -2,28 +2,62 @@
 augroup common
   autocmd!
   autocmd FocusGained * checktime
-  autocmd ColorScheme * call s:Highlight()
+  " autocmd ColorScheme * call s:Highlight()
   autocmd BufWinEnter * call s:OnBufEnter()
   " coc 注释 hilight
   autocmd FileType json syntax match Comment +\/\/.\+$+
-  " 文件树打开的时候，调用fzf不在文件树的buffer打开
+  " explorer
+  autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+  " explorer 文件树打开的时候，调用fzf不在文件树的buffer打开
   autocmd BufEnter * if bufname('#') =~ 'coc-explorer' && bufname('%') !~ 'coc-explorer' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif
+  " autocmd VimEnter * sil! au! FileExplorer *
+  " autocmd BufEnter * let d = expand('%') | if isdirectory(d) | exe 'CocCommand explorer ' . d | endif
   " Highlight the symbol and its references when holding the cursor.
   autocmd CursorHold * silent call CocActionAsync('highlight')
-  " :set autochdir
   " 重新打开文件,回到上次鼠标悬停的位置
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   " 自动改变当前项目的目录
+  " :set autochdir
   autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! cd %:p:h | endif
-
-  autocmd VimEnter * sil! au! FileExplorer *
-  autocmd BufEnter * let d = expand('%') | if isdirectory(d) | exe 'CocCommand explorer ' . d | endif
   " 打开开屏页面，例如vim . or vim /dir
   autocmd BufEnter * let d = expand('%') | if isdirectory(d) | bd | exe 'Startify' | endif
-  " easymotion
+  " easymotion 粘贴
   autocmd VimEnter * :EMCommandLineNoreMap <C-v> <Over>(paste)
-  " explorer
-  autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+augroup end
+
+
+function! s:OnFileType(filetype)
+  if index(['xml', 'wxml', 'html', 'wxss', 'css', 'scss', 'less'], a:filetype) >=0
+    let b:coc_additional_keywords = ['-']
+  endif
+endfunction
+
+
+" 便捷关闭buffer，q关闭
+function! s:OnBufEnter()
+  let name = bufname(+expand('<abuf>'))
+  " quickly leave those temporary buffers
+  if &previewwindow || name =~# '^term://' || &buftype ==# 'nofile' || &buftype ==# 'help'
+    if !mapcheck('q', 'n')
+      nnoremap <silent><buffer> q :<C-U>bd!<CR>
+    endif
+  elseif name =~# '/tmp/'
+    setl bufhidden=delete
+  endif
+  unlet name
+endfunction
+
+
+function! s:OnTermOpen(buf)
+  setl nolist norelativenumber nonumber
+  if &buftype ==# 'terminal'
+    nnoremap <buffer> q :<C-U>bd!<CR>
+  endif
+endfunction
+
+augroup neovim
+  autocmd!
+  autocmd TermOpen  *  :call s:OnTermOpen(+expand('<abuf>'))
 augroup end
 
 function! s:Highlight() abort
@@ -45,23 +79,3 @@ function! s:Highlight() abort
   hi link CocFloating     Pmenu
   hi link MsgSeparator    MoreMsg
 endfunction
-
-function! s:OnFileType(filetype)
-  if index(['xml', 'wxml', 'html', 'wxss', 'css', 'scss', 'less'], a:filetype) >=0
-    let b:coc_additional_keywords = ['-']
-  endif
-endfunction
-
-function! s:OnBufEnter()
-  let name = bufname(+expand('<abuf>'))
-  " quickly leave those temporary buffers
-  if &previewwindow || name =~# '^term://' || &buftype ==# 'nofile' || &buftype ==# 'help'
-    if !mapcheck('q', 'n')
-      nnoremap <silent><buffer> q :<C-U>bd!<CR>
-    endif
-  elseif name =~# '/tmp/'
-    setl bufhidden=delete
-  endif
-  unlet name
-endfunction
-

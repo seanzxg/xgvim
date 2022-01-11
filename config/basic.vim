@@ -111,24 +111,12 @@ let g:terminal_color_13 = '#d3869b'
 let g:terminal_color_14 = '#8ec07c'
 let g:terminal_color_15 = '#ebdbb2'
 
-function! s:OnTermOpen(buf)
-  setl nolist norelativenumber nonumber
-  if &buftype ==# 'terminal'
-    nnoremap <buffer> q :<C-U>bd!<CR>
-  endif
-endfunction
-
-augroup neovim
-  autocmd!
-  autocmd TermOpen  *  :call s:OnTermOpen(+expand('<abuf>'))
-augroup end
 
 nnoremap <leader>. :source $MYVIMRC<CR>
 " nnoremap <leader>w :w<CR>
 " window
 nmap <leader>v :vsplit<cr>
 nmap <leader>s :split<cr>
-
 
 " netrw
 let g:netrw_chgwin = 2

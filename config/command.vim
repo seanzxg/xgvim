@@ -1,4 +1,5 @@
-command! -nargs=0 T    :call     s:OpenTerminal()
+command! -nargs=0 T        :call     s:OpenTerminal()
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Open vertical spit terminal with current parent directory
 function! s:OpenTerminal()
   let bn = bufnr('%')
@@ -16,4 +17,3 @@ function! s:OpenTerminal()
     call feedkeys("\<C-l>", 'n')
   endif
 endfunction
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
