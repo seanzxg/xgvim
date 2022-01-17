@@ -13,12 +13,9 @@ let g:startify_commands = [
         \ ':help',
         \ ]
 let g:startify_bookmarks = [
-            \ { 'ap': '~/work/kuaishou-frontend-ad-alliance-promoter' },
-            \ { 'ac': '~/work/kuaishou-frontend-ad-alliance-activity' },
-            \ { 'ss': '~/work/kuaishou-frontend-ad-ssp' },
-            \ { 'so': '~/work/kuaishou-frontend-ad-ssp-operation' },
-            \ { 'li': '~/work/kuaishou-frontend-ad-alliance-live' },
-            \ { 'su': '~/learn/kuaishou-frontend-ad-alliance-supplier' },
+            \ { 'ap': '~//work/kuaishou-frontend-ad-cc-interactive-platform/package.json' },
+            \ { 'ac': '~/work/kuaishou-frontend-ad-cc-ide/package.json' },
+            \ { 'su': '~/work/kuaishou-frontend-ad-alliance-supplier/package.json' },
             \ { 'c': '~/vim/init.vim' },
             \ { 'z': '~/.zshrc' },
             \ ]

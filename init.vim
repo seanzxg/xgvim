@@ -70,4 +70,5 @@ let g:coc_global_extensions = [
   \ 'coc-vetur',
   \ 'coc-stylelint',
   \ 'coc-pairs',
+  \ 'coc-tabnine',
   \ ]
