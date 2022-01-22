@@ -5,7 +5,7 @@ let g:ctrlsf_auto_focus = {
     \ }
 let g:ctrlsf_winsize = '45%'
 " inoremap <C-t> <Esc>:CtrlSFToggle<CR>
-nmap <F5> :CtrlSFToggle<CR>
+nmap <leader>][ :CtrlSFToggle<CR>
 let g:ctrlsf_position = 'right'
 let g:ctrlsf_mapping = {
       \"open"    : ["<CR>", "o"],

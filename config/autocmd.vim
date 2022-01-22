@@ -48,17 +48,17 @@ function! s:OnBufEnter()
 endfunction
 
 
-function! s:OnTermOpen(buf)
-  setl nolist norelativenumber nonumber
-  if &buftype ==# 'terminal'
-    nnoremap <buffer> q :<C-U>bd!<CR>
-  endif
-endfunction
+" function! s:OnTermOpen(buf)
+"   setl nolist norelativenumber nonumber
+"   if &buftype ==# 'terminal'
+"     nnoremap <buffer> q :<C-U>bd!<CR>
+"   endif
+" endfunction
 
-augroup neovim
-  autocmd!
-  autocmd TermOpen  *  :call s:OnTermOpen(+expand('<abuf>'))
-augroup end
+" augroup neovim
+"   autocmd!
+"   autocmd TermOpen  *  :call s:OnTermOpen(+expand('<abuf>'))
+" augroup end
 
 function! s:Highlight() abort
   if !has('gui_running') | hi normal guibg=NONE | endif

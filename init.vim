@@ -24,6 +24,7 @@ Plug 'tpope/vim-commentary'
 Plug 'alvan/vim-closetag'
 Plug 'valloric/matchtagalways'
 Plug 'tommcdo/vim-exchange'
+Plug 'voldikss/vim-floaterm'
 
 " code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
