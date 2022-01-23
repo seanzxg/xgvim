@@ -23,6 +23,8 @@ augroup common
   autocmd BufEnter * let d = expand('%') | if isdirectory(d) | bd | exe 'Startify' | endif
   " easymotion 粘贴
   autocmd VimEnter * :EMCommandLineNoreMap <C-v> <Over>(paste)
+  " 打开命令行不显示数字标识
+  autocmd TermOpen * setlocal nonumber norelativenumber
 augroup end
 
 
