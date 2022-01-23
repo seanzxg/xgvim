@@ -8,6 +8,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
+Plug 'vim-airline/vim-airline'
 
 " tool
 Plug 'airblade/vim-rooter'
