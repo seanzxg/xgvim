@@ -4,7 +4,7 @@ set hidden
 set encoding=utf-8
 set nobackup
 set nowritebackup
-set cmdheight=4
+set cmdheight=2
 set updatetime=300
 set shortmess+=c
 if has("nvim-0.5.0") || has("patch-8.1.1564")
