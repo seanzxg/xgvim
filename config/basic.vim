@@ -72,7 +72,7 @@ inoremap <C-e> <End>
 inoremap <C-a> <C-o>^
 inoremap <C-o> <C-o>o
 inoremap <C-k> <C-o>O
-
+vnoremap <C-c> "+y
 
 " command line mode ********************************
 cnoremap <C-b> <S-Left>
