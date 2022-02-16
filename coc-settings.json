@@ -18,9 +18,9 @@
     "typescriptreact": ["typescript"],
     "typescript": ["javascript"]
   },
-  "snippets.textmateSnippetsRoots": [
-    "/Users/sean/.local/share/nvim/plugged/vscode-es7-javascript-react-snippets/snippets"
-  ],
+  //"snippets.textmateSnippetsRoots": [
+  //  "/Users/sean/.config/coc/extensions/node_modules/es7-react-js-snippets/lib"
+  //],
   // 提示
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",

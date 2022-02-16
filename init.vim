@@ -30,7 +30,6 @@ Plug 'voldikss/vim-floaterm'
 " code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'cristianoliveira/vim-react-html-snippets'
-Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 Plug 'liuchengxu/vim-which-key'
 call plug#end()
 let mapleader=","
