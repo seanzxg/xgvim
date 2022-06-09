@@ -27,6 +27,8 @@ Plug 'valloric/matchtagalways'
 Plug 'tommcdo/vim-exchange'
 Plug 'voldikss/vim-floaterm'
 
+Plug 'terryma/vim-expand-region'
+
 " code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'cristianoliveira/vim-react-html-snippets'

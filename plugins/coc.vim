@@ -77,8 +77,9 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
-nmap <silent> <cr> <Plug>(coc-range-select)
-xmap <silent> <cr> <Plug>(coc-range-select)
+" vim-expand-region plugin instead it
+" nmap <silent> <cr> <Plug>(coc-range-select)
+" xmap <silent> <cr> <Plug>(coc-range-select)
 
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
