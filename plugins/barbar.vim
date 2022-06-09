@@ -6,7 +6,7 @@ noremap M :BufferPrevious<CR>
 nnoremap <leader>q :BufferClose<CR>
 nnoremap <leader>f :BufferPick<CR>
 nnoremap <leader>p :BufferPin<CR>
-nnoremap <leader>bo :BufferCloseAllButCurrent<CR>
+nnoremap <leader>b :BufferCloseAllButCurrent<CR>
 nnoremap <silent>    <leader>1 :BufferGoto 1<CR>
 nnoremap <silent>    <leader>2 :BufferGoto 2<CR>
 nnoremap <silent>    <leader>3 :BufferGoto 3<CR>
