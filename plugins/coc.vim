@@ -59,7 +59,7 @@ nmap <leader>r <Plug>(coc-rename)
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>a  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>`  <Plug>(coc-fix-current)
+nmap \`  <Plug>(coc-fix-current)
 " Replace all of current word
 nnoremap <leader>w :%s/\<<C-r><C-w>\>//g<left><left>
 " nmap <leader>f <Plug>(coc-refactor)
@@ -84,15 +84,21 @@ nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 " list 
+
+nnoremap <silent><nowait> \ll  :<C-u>CocList<cr>
+nnoremap <silent><nowait> \lh  :<C-u>CocList helptags<cr>
+nnoremap <silent><nowait> \lc  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> \lf  :<C-u>CocList files<cr>
+nnoremap <silent><nowait> \lg  :<C-u>CocList grep<cr>
+nnoremap <silent><nowait> \lw  :<C-u>CocList windows<cr>
+
 " nnoremap <silent> \r  :<C-u>CocList -N mru -A<cr>
-nnoremap <silent><nowait> <leader>ls  :<C-u>CocList snippets<cr>
-nnoremap <silent><nowait> <leader>lq  :<C-u>CocList quickfix<CR>
-nnoremap <silent><nowait> <leader>ld  :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <leader>le  :<C-u>CocList extensions<cr>
-nnoremap <silent><nowait> <leader>lb  :<C-u>CocList bookmark<cr>
-nnoremap <silent><nowait> <leader>lc  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <leader>lm  :<C-u>CocList mru<cr>
-nnoremap <silent><nowait> <leader>lf  :<C-u>CocList files<cr>
-nnoremap <silent><nowait> <leader>ln  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <leader>lp  :<C-u>CocPrev<CR>
-nnoremap <silent><nowait> <leader>lr  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait> <leader>ls  :<C-u>CocList snippets<cr>
+" nnoremap <silent><nowait> <leader>lq  :<C-u>CocList quickfix<CR>
+" nnoremap <silent><nowait> <leader>ld  :<C-u>CocList diagnostics<cr>
+" nnoremap <silent><nowait> <leader>le  :<C-u>CocList extensions<cr>
+" nnoremap <silent><nowait> <leader>lb  :<C-u>CocList bookmark<cr>
+" nnoremap <silent><nowait> <leader>lm  :<C-u>CocList mru<cr>
+" nnoremap <silent><nowait> <leader>ln  :<C-u>CocNext<CR>
+" nnoremap <silent><nowait> <leader>lp  :<C-u>CocPrev<CR>
+" nnoremap <silent><nowait> <leader>lr  :<C-u>CocListResume<CR>
