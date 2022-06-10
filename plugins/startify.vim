@@ -13,7 +13,7 @@ let g:startify_commands = [
         \ ':help',
         \ ]
 let g:startify_bookmarks = [
-            \ { '1': '~/work/kuaishou-frontend-ad-alliance-supercard/package.json' },
+            \ { 'a': '~/work/kuaishou-frontend-ad-alliance-supercard/package.json' },
             \ { 'c': '~/vim/init.vim' },
             \ { 'z': '~/.zshrc' },
             \ ]
