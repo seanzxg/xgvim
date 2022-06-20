@@ -26,8 +26,10 @@ Plug 'alvan/vim-closetag'
 Plug 'valloric/matchtagalways'
 Plug 'tommcdo/vim-exchange'
 Plug 'voldikss/vim-floaterm'
-
 Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
 
 " code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -77,3 +79,4 @@ let g:coc_global_extensions = [
   \ 'coc-pairs',
   \ 'coc-tabnine',
   \ ]
+
