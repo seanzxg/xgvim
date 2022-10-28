@@ -1,7 +1,6 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " theme
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
 Plug 'posva/vim-vue'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'ryanoasis/vim-devicons'
@@ -9,6 +8,7 @@ Plug 'mhinz/vim-startify'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'vim-airline/vim-airline'
+
 
 " tool
 Plug 'airblade/vim-rooter'
@@ -29,13 +29,14 @@ Plug 'voldikss/vim-floaterm'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-
+Plug 'Yggdroot/indentLine'
+" Plug 'whiteinge/diffconflicts'
 
 " code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'cristianoliveira/vim-react-html-snippets'
 Plug 'liuchengxu/vim-which-key'
-Plug 'seanzxg/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+
 
 call plug#end()
 let mapleader=","
@@ -51,11 +52,7 @@ for s:path in split(glob('~/vim/plugins/*.vim'), "\n")
 endfor
 
 
-if has('gui_running')
-  colorscheme solarized
-else
-  colorscheme gruvbox
-endif
+colorscheme gruvbox
 
 
 "  coc.nvim

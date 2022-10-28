@@ -6,12 +6,6 @@ augroup common
   autocmd BufWinEnter * call s:OnBufEnter()
   " coc 注释 hilight
   autocmd FileType json syntax match Comment +\/\/.\+$+
-  " explorer
-  autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-  " explorer 文件树打开的时候，调用fzf不在文件树的buffer打开
-  autocmd BufEnter * if bufname('#') =~ 'coc-explorer' && bufname('%') !~ 'coc-explorer' && winnr('$') > 1 | b# | exe "normal! \<c-w>\<c-w>" | :blast | endif
-  " autocmd VimEnter * sil! au! FileExplorer *
-  " autocmd BufEnter * let d = expand('%') | if isdirectory(d) | exe 'CocCommand explorer ' . d | endif
   " Highlight the symbol and its references when holding the cursor.
   autocmd CursorHold * silent call CocActionAsync('highlight')
   " 重新打开文件,回到上次鼠标悬停的位置
@@ -49,18 +43,6 @@ function! s:OnBufEnter()
   unlet name
 endfunction
 
-
-" function! s:OnTermOpen(buf)
-"   setl nolist norelativenumber nonumber
-"   if &buftype ==# 'terminal'
-"     nnoremap <buffer> q :<C-U>bd!<CR>
-"   endif
-" endfunction
-
-" augroup neovim
-"   autocmd!
-"   autocmd TermOpen  *  :call s:OnTermOpen(+expand('<abuf>'))
-" augroup end
 
 function! s:Highlight() abort
   if !has('gui_running') | hi normal guibg=NONE | endif

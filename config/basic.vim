@@ -63,8 +63,8 @@ nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
 " insert mode ********************************
-inoremap <C-p> <Up>
-inoremap <C-n> <Down>
+imap <C-p> <Up>
+imap <C-n> <Down>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-l> <Right>

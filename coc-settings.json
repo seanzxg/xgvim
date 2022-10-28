@@ -11,14 +11,15 @@
   },
 
   // 代码块
-  "snippets.ultisnips.enable": true,
-  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snippets"],
+  // "snippets.ultisnips.enable": true,
+  // "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snippets"],
   "snippets.extends": {
     "javascriptreact": ["javascript"],
     "typescriptreact": ["typescript"],
     "typescript": ["javascript"]
   },
   // 提示
+  // "suggest.noselect": false,
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",

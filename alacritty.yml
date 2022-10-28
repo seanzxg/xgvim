@@ -1,6 +1,6 @@
 # Font configuration (changes require restart)
 font:
-  size: 15
+  size: 16
   normal:
     family: Hack Nerd Font
     style: Regular
