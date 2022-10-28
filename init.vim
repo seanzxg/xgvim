@@ -1,7 +1,6 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " theme
 Plug 'morhetz/gruvbox'
-Plug 'posva/vim-vue'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-startify'
@@ -64,7 +63,6 @@ let g:coc_global_extensions = [
   \ 'coc-cssmodules',
   \ 'coc-styled-components',
   \ 'coc-emmet',
-  \ 'coc-highlight',
   \ 'coc-html',
   \ 'coc-svg',
   \ 'coc-snippets',

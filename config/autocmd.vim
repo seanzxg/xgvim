@@ -7,7 +7,6 @@ augroup common
   " coc 注释 hilight
   autocmd FileType json syntax match Comment +\/\/.\+$+
   " Highlight the symbol and its references when holding the cursor.
-  autocmd CursorHold * silent call CocActionAsync('highlight')
   " 重新打开文件,回到上次鼠标悬停的位置
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   " 自动改变当前项目的目录
@@ -43,23 +42,3 @@ function! s:OnBufEnter()
   unlet name
 endfunction
 
-
-function! s:Highlight() abort
-  if !has('gui_running') | hi normal guibg=NONE | endif
-  call matchadd('ColorColumn', '\%81v', 100)
-  hi ColorColumn ctermbg=magenta ctermfg=0 guibg=#333333
-  hi HighlightedyankRegion term=bold ctermbg=0 guibg=#13354A
-  hi CocCursorRange guibg=#b16286 guifg=#ebdbb2
-  hi CursorLineNr  ctermfg=214 ctermbg=NONE guifg=#fabd2f guibg=NONE
-  hi CocErrorFloat   guifg=#fb4934 guibg=#504945
-  hi CocWarningFloat guifg=#fabd2f guibg=#504945
-  hi CocInfoFloat    guifg=#d3869b guibg=#504945
-  hi CocHintFloat    guifg=#83a598 guibg=#504945
-  hi CocMenuSel      ctermbg=237 guibg=#504945
-  hi link CocErrorSign    GruvboxRedSign
-  hi link CocWarningSign  GruvboxYellowSign
-  hi link CocInfoSign     GruvboxPurpleSign
-  hi link CocHintSign     GruvboxBlueSign
-  hi link CocFloating     Pmenu
-  hi link MsgSeparator    MoreMsg
-endfunction
