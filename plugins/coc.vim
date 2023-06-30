@@ -7,6 +7,7 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
   set signcolumn=number
@@ -26,7 +27,13 @@ function! CheckBackSpace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" let g:coc_snippet_next = '<tab>'
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
@@ -38,9 +45,6 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-
-vmap <C-j> <Plug>(coc-snippets-select)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -99,13 +103,3 @@ nnoremap <silent><nowait> \lf  :<C-u>CocList files<cr>
 nnoremap <silent><nowait> \lg  :<C-u>CocList grep<cr>
 nnoremap <silent><nowait> \lw  :<C-u>CocList windows<cr>
 
-" nnoremap <silent> \r  :<C-u>CocList -N mru -A<cr>
-" nnoremap <silent><nowait> <leader>ls  :<C-u>CocList snippets<cr>
-" nnoremap <silent><nowait> <leader>lq  :<C-u>CocList quickfix<CR>
-" nnoremap <silent><nowait> <leader>ld  :<C-u>CocList diagnostics<cr>
-" nnoremap <silent><nowait> <leader>le  :<C-u>CocList extensions<cr>
-" nnoremap <silent><nowait> <leader>lb  :<C-u>CocList bookmark<cr>
-" nnoremap <silent><nowait> <leader>lm  :<C-u>CocList mru<cr>
-" nnoremap <silent><nowait> <leader>ln  :<C-u>CocNext<CR>
-" nnoremap <silent><nowait> <leader>lp  :<C-u>CocPrev<CR>
-" nnoremap <silent><nowait> <leader>lr  :<C-u>CocListResume<CR>

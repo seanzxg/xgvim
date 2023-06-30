@@ -86,33 +86,6 @@ cnoremap <C-h> <BS>
 cnoremap <C-t> <C-R>=expand("%:p:h") . "/" <CR>
 
 tnoremap <Esc> <C-\><C-n>
-" tnoremap <C-h> <C-\><C-n><C-w>h
-" tnoremap <C-j> <C-\><C-n><C-w>j
-" tnoremap <C-k> <C-\><C-n><C-w>k
-" tnoremap <M-1> <C-\><C-n>1gt
-" tnoremap <M-2> <C-\><C-n>2gt
-" tnoremap <M-3> <C-\><C-n>3gt
-" tnoremap <M-4> <C-\><C-n>4gt
-" tnoremap <M-5> <C-\><C-n>5gt
-
-" Neovim :terminal colors.
-"let g:terminal_color_0  = '#282828'
-"let g:terminal_color_1  = '#cc241d'
-"let g:terminal_color_2  = '#98971a'
-"let g:terminal_color_3  = '#d79921'
-"let g:terminal_color_4  = '#458588'
-"let g:terminal_color_5  = '#b16286'
-"let g:terminal_color_6  = '#689d6a'
-"let g:terminal_color_7  = '#a89984'
-"let g:terminal_color_8  = '#928374'
-"let g:terminal_color_9  = '#fb4934'
-"let g:terminal_color_10 = '#b8bb26'
-"let g:terminal_color_11 = '#fabd2f'
-"let g:terminal_color_12 = '#83a598'
-"let g:terminal_color_13 = '#d3869b'
-"let g:terminal_color_14 = '#8ec07c'
-"let g:terminal_color_15 = '#ebdbb2'
-
 
 nnoremap <leader>. :source $MYVIMRC<CR>
 " nnoremap <leader>w :w<CR>
@@ -120,11 +93,3 @@ nnoremap <leader>. :source $MYVIMRC<CR>
 nmap <leader>v :vsplit<cr>
 nmap <leader>s :split<cr>
 
-" netrw
-" let g:netrw_chgwin = 2
-" let g:netrw_banner=0
-" let g:netrw_list_hide = ',\(^\|\s\s\)\zs\.\S\+'
-" let g:netrw_winsize=20
-" let g:netrw_liststyle=3
-" let g:netrw_localrmdir='rmtrash'
-" let g:netrw_bufsettings = "noma nomod nonu nobl nowrap ro nornu buftype=nofile"

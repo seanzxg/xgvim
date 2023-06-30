@@ -40,22 +40,22 @@ window:
 
   padding:
     x: 0
-    y: 0
+    y: 28
   dynamic_padding: false
-  decorations: full
+  decorations: Transparent
   startup_mode: Maximized
 key_bindings:
-  - { key: W, mods: Command, chars: "\\lw" }
-  - { key: H, mods: Command, chars: "\\lh" }
-  - { key: L, mods: Command, chars: "\\ll" }
-  - { key: P, mods: Command, chars: "\\lf" }
-  - { key: G, mods: Command, chars: "\\lg" }
-  - { key: P, mods: Command | Shift, chars: "\\lc" }
-  - { key: J, mods: Command, chars: "\\j" }
-  - { key: Period, mods: Command, chars: "\\`" }
-  - { key: F, mods: Command, chars: "\\]" }
-  - { key: F, mods: Command | Shift, chars: "\\[" }
-    #- { key: Slash,        mods: Command, chars: ",c"                               }
+  - { key: C, mods: Command, action: Copy }
+  - { key: W, mods: Command, mode: Alt, chars: "\\lw" }
+  - { key: H, mods: Command, mode: Alt, chars: "\\lh" }
+  - { key: L, mods: Command, mode: Alt, chars: "\\ll" }
+  - { key: P, mods: Command, mode: Alt, chars: "\\lf" }
+  - { key: G, mods: Command, mode: Alt, chars: "\\lg" }
+  - { key: P, mods: Command | Shift, mode: Alt, chars: "\\lc" }
+  - { key: J, mods: Command, mode: Alt, chars: "\\j" }
+  - { key: Period, mods: Command, mode: Alt, chars: "\\`" }
+  - { key: F, mods: Command, mode: Alt, chars: "\\]" }
+  - { key: F, mods: Command | Shift, mode: Alt, chars: "\\[" }
   - { key: Back, action: ReceiveChar }
-  - { key: B, mods: Command, chars: "\x1b:CocCommand explorer\n" }
-  - { key: S, mods: Command, chars: "\x1b:w\n" }
+  - { key: B, mods: Command, mode: Alt, chars: "\x1b:CocCommand explorer\n" }
+  - { key: S, mods: Command, mode: Alt, chars: "\x1b:w\n" }

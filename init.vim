@@ -1,4 +1,7 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+" 解决updatePlugin失败的问题，
+let g:plug_url_format = 'git@github.com:%s.git'
+
 " theme
 Plug 'morhetz/gruvbox'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -23,13 +26,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'alvan/vim-closetag'
 Plug 'valloric/matchtagalways'
-Plug 'tommcdo/vim-exchange'
 Plug 'voldikss/vim-floaterm'
 Plug 'terryma/vim-expand-region'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
-" Plug 'whiteinge/diffconflicts'
 
 " code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -61,7 +61,6 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-css',
   \ 'coc-cssmodules',
-  \ 'coc-styled-components',
   \ 'coc-emmet',
   \ 'coc-html',
   \ 'coc-svg',
@@ -69,8 +68,6 @@ let g:coc_global_extensions = [
   \ 'coc-explorer',
   \ 'coc-lists',
   \ 'coc-eslint',
-  \ 'coc-vetur',
-  \ 'coc-stylelint',
   \ 'coc-pairs',
   \ 'coc-tabnine',
   \ ]

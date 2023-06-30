@@ -10,21 +10,19 @@ let g:startify_custom_header = [
         \'      ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝ ╚═════╝ ',
         \]
 let g:startify_commands = [
-        \ ':help',
+        \ {'h': ':help'},
         \ ]
 let g:startify_bookmarks = [
-            \ { 'a': '~/work/kuaishou-frontend-ad-alliance-supercard/package.json' },
             \ { 'c': '~/vim/init.vim' },
             \ { 'z': '~/.zshrc' },
             \ ]
 let g:startify_session_dir = '~/.vim/sessions'
 let g:startify_lists = [
-          \ { 'type': 'bookmarks', 'header': ['   Projects']      },
+          \ { 'type': 'bookmarks', 'header': ['   Config']      },
           \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-          \ { 'type': 'files',     'header': ['   MRU']            },
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'commands',  'header': ['   Commands']       },
           \ ]
+
 let g:startify_custom_footer =
            \ ['', "    welcome to sean home. remember keys",
            \"    e:  creates an empty buffer",
