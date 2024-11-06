@@ -1,6 +1,6 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " 解决updatePlugin失败的问题，
-let g:plug_url_format = 'git@github.com:%s.git'
+" let g:plug_url_format = 'git@github.com:%s.git'
 
 " theme
 Plug 'morhetz/gruvbox'

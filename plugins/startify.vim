@@ -15,6 +15,8 @@ let g:startify_commands = [
 let g:startify_bookmarks = [
             \ { 'c': '~/vim/init.vim' },
             \ { 'z': '~/.zshrc' },
+            \ { 's': '~/work/sherlock/package.json' },
+            \ { 'd': '~/work/g6_use/package.json' },
             \ ]
 let g:startify_session_dir = '~/.vim/sessions'
 let g:startify_lists = [
